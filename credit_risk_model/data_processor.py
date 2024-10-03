@@ -1,6 +1,6 @@
 import pandas as pd 
 import logging 
-
+import urllib.request
 class DataHandler:
     
     """
@@ -14,5 +14,14 @@ class DataHandler:
             self.file_path = f"{file_path}"+f"/{url.split('/')[-1]}"
             self.url = url
         self.output_path = output_path
+        
+    def download_data(self)-> None:
+        logging.info(f" Downloading data from {self.url}")
+        urllib.request.urlretrieve(self.url, self.file_path)
             
+    def load_data(self) -> pd.DataFrame:
+        return pd.read_csv(self.file_path)
+    
+    
+        
             
