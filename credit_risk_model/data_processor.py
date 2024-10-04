@@ -22,6 +22,16 @@ class DataHandler:
     def load_data(self) -> pd.DataFrame:
         return pd.read_csv(self.file_path)
     
+    def save_data(self,df:pd.DataFrame,file_name : str) -> None:
+        logging.info(f" Saving the data to {self.output_path}")
+        df.to_csv(self.output_path+file_name,index=False)
+    
+    def sanitize(self,df:pd.DataFrame)-> pd.DataFrame:
+        """
+        Rename columns to snake case and strip whitespace
+        """
+        return df.rename(lambda x: x.lower().strip().replace(' ','_'),axis='columns')
+        
     
         
             
