@@ -13,6 +13,7 @@ class DataHandler:
         self.file_path = f"{file_path}"+f"/{url.split('/')[-1]}" if url is not None else file_path # save non default user specified path
         self.url = url
         self.output_path = output_path
+        print(self.file_path)
         
     def download_data(self)-> None:
         logging.info(f" Downloading data from {self.url}")
