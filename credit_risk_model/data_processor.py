@@ -10,9 +10,8 @@ class DataHandler:
         if(url is None and file_path == 'data/raw') or (url is not None and file_path!='data/raw'):
             raise ValueError('Either url or file_path must/only be specified')
         
-        if url is not None:
-            self.file_path = f"{file_path}"+f"/{url.split('/')[-1]}"
-            self.url = url
+        self.file_path = f"{file_path}"+f"/{url.split('/')[-1]}" if url is not None else file_path # save non default user specified path
+        self.url = url
         self.output_path = output_path
         
     def download_data(self)-> None:
