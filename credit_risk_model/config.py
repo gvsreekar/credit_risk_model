@@ -2,6 +2,7 @@ import os
 
 PARENT_ABS_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__),'..'))
 FILE_NAME = 'LoanTap_data.csv'
+URL=''
 
 # Keeping all the variables which will be used inside the pipeline in capital letters
 # Training configuration
