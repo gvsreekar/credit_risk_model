@@ -13,36 +13,42 @@ def load_data_and_sanitize(file_name:str =config.FILE_NAME)->pd.DataFrame:
     df = pd.read_csv(f"{config.PARENT_ABS_PATH}\data\{file_name}").rename(lambda x: x.lower().strip().replace(' ','_'),axis='columns')
     return df
     
-
-
+def save_data(df : pd.DataFrame,file_name : str) -> None:
     """
-    This is a class to download data and load it into pandas DataFrame with some sanity operations
+    Saves a pandas DataFrame to a local csv file.
+    
+    Args:
+        df (pd.DataFrame): The DataFrame to save.
+        file_name (str): The name of the local csv file to save the DataFrame to.
     """
-    def __init__(self,file_path : str = 'data/raw',url:str = None, output_path : str = 'data/processed/'):
-        if(url is None and file_path == 'data/raw') or (url is not None and file_path!='data/raw'):
-            raise ValueError('Either url or file_path must/only be specified')
-        
-        self.file_path = f"{file_path}"+f"/{url.split('/')[-1]}" if url is not None else file_path # save non default user specified path
-        self.url = url
-        self.output_path = output_path
-        print(self.file_path)
-        
-    def download_data(self)-> None:
-        logging.info(f" Downloading data from {self.url}")
-        urllib.request.urlretrieve(self.url, self.file_path)
-            
-    def load_data(self) -> pd.DataFrame:
-        return pd.read_csv(self.file_path)
+    logging.info('Saving data to %s', file_name)
+    df.to_csv(f'{config.PARENT_ABS_PATH}/data/{file_name}', index=False)
     
-    def save_data(self,df:pd.DataFrame,file_name : str) -> None:
-        logging.info(f" Saving the data to {self.output_path}")
-        df.to_csv(self.output_path+file_name,index=False)
+def save_pipeline(pipeline, pipe_name: str) -> None:
+    """
+    Saves a pipeline to a pickle file.
     
-    def sanitize(self,df:pd.DataFrame)-> pd.DataFrame:
-        """
-        Rename columns to snake case and strip whitespace
-        """
-        return df.rename(lambda x: x.lower().strip().replace(' ','_'),axis='columns')
+    Args:
+        pipeline (Pipeline): The pipeline to save.
+    """
+    logging.info('Saving pipeline to trained_models folder')
+    with open(f'{config.PARENT_ABS_PATH}/credit_risk_model/trained_models/{pipe_name}.pkl', 'wb') as f:
+        joblib.dump(pipeline, f)
+    print(f'Saved pipeline to trained_models/{pipe_name}.pkl')
+
+def load_pipeline(pipe_name: str):
+    """
+    Loads a saved pipeline from a pickle file.
+
+    Args:
+        pipe_name (str): The name of the pipeline to load.
+
+    Returns:
+        Pipeline: The loaded pipeline.
+    """
+    with open(f'{config.PARENT_ABS_PATH}/credit_risk_model/trained_models/{pipe_name}.pkl', 'rb') as f:
+        pipe = joblib.load(f)
+    return pipe
         
     
         
