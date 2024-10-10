@@ -2,7 +2,7 @@ import pandas as pd
 import logging 
 import urllib.request
 from credit_risk_model import config
-import joblib
+import dill
 
 
 def load_data_and_sanitize(file_name:str =config.FILE_NAME)->pd.DataFrame:
@@ -33,7 +33,7 @@ def save_pipeline(pipeline, pipe_name: str) -> None:
     """
     logging.info('Saving pipeline to trained_models folder')
     with open(f'{config.PARENT_ABS_PATH}/credit_risk_model/trained_models/{pipe_name}.pkl', 'wb') as f:
-        joblib.dump(pipeline, f)
+        dill.dump(pipeline, f)
     print(f'Saved pipeline to trained_models/{pipe_name}.pkl')
 
 def load_pipeline(pipe_name: str):
@@ -47,9 +47,8 @@ def load_pipeline(pipe_name: str):
         Pipeline: The loaded pipeline.
     """
     with open(f'{config.PARENT_ABS_PATH}/credit_risk_model/trained_models/{pipe_name}.pkl', 'rb') as f:
-        pipe = joblib.load(f)
+        pipe = dill.load(f)
     return pipe
-        
     
         
             

@@ -10,7 +10,7 @@ import sys
 #sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),'..')))
 import credit_risk_model.config as config 
-print(config.TARGET)
+
 
 # Num skewed pipeline
 num_skewed_pipeline = Pipeline(steps=[
@@ -25,8 +25,8 @@ num_pipeline = Pipeline(steps=[
 ])
 
 def age_of_credit(df:pd.DataFrame)->pd.DataFrame:
-    df['earliest_cr_line']=pd.to_datetime(df['earliest_cr_line'])
-    df['issue_d']=pd.to_datetime(df['issue_d'])
+    df['earliest_cr_line']=pd.to_datetime(df['earliest_cr_line'],format='%b-%Y')
+    df['issue_d']=pd.to_datetime(df['issue_d'],format='%b-%Y')
     df['age_of_credit'] = df['issue_d'].dt.year - df['earliest_cr_line'].dt.year 
     return df[['age_of_credit']]
 
