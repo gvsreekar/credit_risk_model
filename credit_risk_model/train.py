@@ -93,10 +93,12 @@ def perform_training():
         # report['1'] will capture f1 score, precision and recall of 
         mlflow.log_metrics(report['1'])
         mlflow.log_metric('threshold',XGB_tuned_model.best_threshold_)
-        # mlflow.log_artifact('credit_risk_model/FE_pipeline.py')
-        # mlflow.log_artifact('credit_risk_model/config.py')
-        mlflow.log_artifact('FE_pipeline.py')
-        mlflow.log_artifact('config.py')
+        # Use the below code to log artifact if you run the code from root directory using mlflow run
+        mlflow.log_artifact('credit_risk_model/FE_pipeline.py')
+        mlflow.log_artifact('credit_risk_model/config.py')
+        # Use the below code if you run only train.py file by being in the train.py file path
+        # mlflow.log_artifact('FE_pipeline.py')
+        # mlflow.log_artifact('config.py')
         mlflow.sklearn.log_model(XGB_tuned_model, 'model')
     
     save_pipeline(XGB_tuned_model,'XGB_model')

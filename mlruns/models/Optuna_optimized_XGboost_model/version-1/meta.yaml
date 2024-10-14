@@ -1,0 +1,15 @@
+aliases: []
+creation_timestamp: 1728897724680
+current_stage: None
+description: This is an XGBoost model whose hyperparameters are tuned using Optuna,
+  with the decision threshold of 0.53 and F1 score of Target class is 0.65.
+last_updated_timestamp: 1728897805902
+name: Optuna_optimized_XGboost_model
+run_id: dd8a3b7f906643238a8c1b8b032b3728
+run_link: ''
+source: mlflow-artifacts:/849708934095807959/dd8a3b7f906643238a8c1b8b032b3728/artifacts/model
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/849708934095807959/dd8a3b7f906643238a8c1b8b032b3728/artifacts/model
+user_id: null
+version: 1

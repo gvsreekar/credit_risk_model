@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/SHREEKAR/Desktop/credit_risk_model/mlruns/870316248162147283/72edcc90a8bd4c1aac6b373c5c622b3a/artifacts
+end_time: 1728903755777
+entry_point_name: ''
+experiment_id: '870316248162147283'
+lifecycle_stage: active
+run_id: 72edcc90a8bd4c1aac6b373c5c622b3a
+run_name: bemused-snake-787
+run_uuid: 72edcc90a8bd4c1aac6b373c5c622b3a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1728903733545
+status: 4
+tags: []
+user_id: SHREEKAR

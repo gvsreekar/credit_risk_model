@@ -1,0 +1,8 @@
+name: credit-risk-model
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    command: python credit_risk_model/train.py
+
