@@ -97,7 +97,7 @@ def perform_training():
         # mlflow.log_artifact('credit_risk_model/config.py')
         mlflow.log_artifact('FE_pipeline.py')
         mlflow.log_artifact('config.py')
-        mlflow.xgboost.log_model(XGB_tuned_model, 'model')
+        mlflow.sklearn.log_model(XGB_tuned_model, 'model')
     
     save_pipeline(XGB_tuned_model,'XGB_model')
     save_pipeline(target_pipeline,'target_pipeline')

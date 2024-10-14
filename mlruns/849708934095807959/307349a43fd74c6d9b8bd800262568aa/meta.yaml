@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/849708934095807959/307349a43fd74c6d9b8bd800262568aa/artifacts
+end_time: 1728894982884
+entry_point_name: ''
+experiment_id: '849708934095807959'
+lifecycle_stage: active
+run_id: 307349a43fd74c6d9b8bd800262568aa
+run_name: Trial_1
+run_uuid: 307349a43fd74c6d9b8bd800262568aa
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1728894972144
+status: 3
+tags: []
+user_id: SHREEKAR
