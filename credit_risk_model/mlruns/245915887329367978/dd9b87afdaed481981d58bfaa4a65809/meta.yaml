@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/SHREEKAR/Desktop/credit_risk_model/credit_risk_model/mlruns/245915887329367978/dd9b87afdaed481981d58bfaa4a65809/artifacts
+end_time: 1728892728411
+entry_point_name: ''
+experiment_id: '245915887329367978'
+lifecycle_stage: active
+run_id: dd9b87afdaed481981d58bfaa4a65809
+run_name: Trial_23
+run_uuid: dd9b87afdaed481981d58bfaa4a65809
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1728892717051
+status: 3
+tags: []
+user_id: SHREEKAR

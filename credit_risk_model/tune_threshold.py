@@ -16,8 +16,10 @@ def find_the_best_decision_threshold(model,x_train,y_train,x_test,y_test,scoring
     y_pred = best_threshold_model.predict(x_test)
     print('Classification report: Training set')
     print(classification_report(y_train_transformed,best_threshold_model.predict(x_train)))
+    # In the below code output_dict=True to easily log model metrics using MLflow
+    report = classification_report(y_test_transformed,y_pred,output_dict=True)
     print('Classification report: Test set')
     print(classification_report(y_test_transformed,y_pred))
     print(f'Best threshold = {best_threshold_model.best_threshold_:.2f} with {scoring} score = {best_threshold_model.best_score_:.2f}')
     plot_threshold_scoring(best_threshold_model,scoring)
-    return best_threshold_model
+    return best_threshold_model,report
