@@ -14,7 +14,7 @@ from credit_risk_model.tune_threshold import find_the_best_decision_threshold
 from sklearn.pipeline import Pipeline
 from sklearn.model_selection import GridSearchCV,train_test_split
 from sklearn.metrics import f1_score
-mlflow.set_tracking_uri('http://127.0.0.1:5000')
+# mlflow.set_tracking_uri('http://127.0.0.1:5000')
 
 
 df = load_data_and_sanitize(config.FILE_NAME)
@@ -74,7 +74,7 @@ def objective(trial):
 def perform_training():
     
     # we have to create a study and maximize it using optuna 
-    mlflow.set_experiment("Optuna optimization of XGBoost classifier")
+    mlflow.set_experiment("Optuna optimization of XGB classifier")
     with mlflow.start_run(run_name="Optuna optimized model after 30 trials"):
         mlflow.set_tag('model','XGBClassifier')
         mlflow.set_tag('objective','maximize_f1_class_1')

@@ -1,6 +1,0 @@
-artifact_location: mlflow-artifacts:/849708934095807959
-creation_time: 1728893687469
-experiment_id: '849708934095807959'
-last_update_time: 1728893687469
-lifecycle_stage: active
-name: Optuna optimization of XGBoost classifier

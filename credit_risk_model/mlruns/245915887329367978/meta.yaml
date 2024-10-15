@@ -1,6 +1,0 @@
-artifact_location: file:///C:/Users/SHREEKAR/Desktop/credit_risk_model/credit_risk_model/mlruns/245915887329367978
-creation_time: 1728891793515
-experiment_id: '245915887329367978'
-last_update_time: 1728891793515
-lifecycle_stage: active
-name: Optuna optimization of XGBoost classifier
