@@ -14,7 +14,7 @@ from credit_risk_model.tune_threshold import find_the_best_decision_threshold
 from sklearn.pipeline import Pipeline
 from sklearn.model_selection import GridSearchCV,train_test_split
 from sklearn.metrics import f1_score
-# mlflow.set_tracking_uri('http://127.0.0.1:5000')
+mlflow.set_tracking_uri('http://127.0.0.1:5000')
 
 
 df = load_data_and_sanitize(config.FILE_NAME)
@@ -94,11 +94,11 @@ def perform_training():
         mlflow.log_metrics(report['1'])
         mlflow.log_metric('threshold',XGB_tuned_model.best_threshold_)
         # Use the below code to log artifact if you run the code from root directory using mlflow run
-        mlflow.log_artifact('credit_risk_model/FE_pipeline.py')
-        mlflow.log_artifact('credit_risk_model/config.py')
+        # mlflow.log_artifact('credit_risk_model/FE_pipeline.py')
+        # mlflow.log_artifact('credit_risk_model/config.py')
         # Use the below code if you run only train.py file by being in the train.py file path
-        # mlflow.log_artifact('FE_pipeline.py')
-        # mlflow.log_artifact('config.py')
+        mlflow.log_artifact('FE_pipeline.py')
+        mlflow.log_artifact('config.py')
         mlflow.sklearn.log_model(XGB_tuned_model, 'model')
     
     save_pipeline(XGB_tuned_model,'XGB_model')
