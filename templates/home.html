@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Loan Prediction Application 🏦</title>
+</head>
+<body>
+    <h2 align="center">Welcome to Loan Prediction Application</h2>
+    <br/>
+    <form action="/predict" method="POST"> 
+        <table align="center" cellpadding="10">
+            <tr>
+                <td>LOAN AMOUNT</td>
+                <td>
+                    <input type="number" name="loan_amnt" step="0.10" placeholder="Loan Amount" required />
+                </td>
+            </tr>
+            <tr>
+                <td>TERM</td>
+                <td>
+                    <select name="term" required>
+                        <option value=" 36 months">36 months</option>
+                        <option value=" 60 months">60 months</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>INTEREST RATE</td>
+                <td>
+                    <input type="number" name="int_rate" step="0.01" placeholder="Interest Rate" required />
+                </td>
+            </tr>
+            <tr>
+                <td>INSTALLMENT</td>
+                <td>
+                    <input type="number" name="installment" step="0.01" placeholder="Installment" required />
+                </td>
+            </tr>
+            <tr>
+                <td>GRADE</td>
+                <td>
+                    <select name="grade" required>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                        <option value="G">G</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>SUB GRADE</td>
+                <td>
+                    <input type="text" name="sub_grade" maxlength="2" placeholder="Sub Grade" required />
+                </td>
+            </tr>
+            <tr>
+                <td>EMPLOYMENT TITLE</td>
+                <td>
+                    <input type="text" name="emp_title" placeholder="Employment Title" required />
+                </td>
+            </tr>
+            <tr>
+                <td>EMPLOYMENT LENGTH</td>
+                <td>
+                    <select name="emp_length" required>
+                        <option value="< 1 year">< 1 year</option>
+                        <option value="1 year">1 year</option>
+                        <option value="2 years">2 years</option>
+                        <option value="3 years">3 years</option>
+                        <option value="4 years">4 years</option>
+                        <option value="5 years">5 years</option>
+                        <option value="6 years">6 years</option>
+                        <option value="7 years">7 years</option>
+                        <option value="8 years">8 years</option>
+                        <option value="9 years">9 years</option>
+                        <option value="10+ years">10+ years</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>HOME OWNERSHIP</td>
+                <td>
+                    <select name="home_ownership" required>
+                        <option value="RENT">RENT</option>
+                        <option value="OWN">OWN</option>
+                        <option value="MORTGAGE">MORTGAGE</option>
+                        <option value="OTHER">OTHER</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>ANNUAL INCOME</td>
+                <td>
+                    <input type="number" name="annual_inc" step="0.01" placeholder="Annual Income" required />
+                </td>
+            </tr>
+            <tr>
+                <td>VERIFICATION STATUS</td>
+                <td>
+                    <select name="verification_status" required>
+                        <option value="Verified">Verified</option>
+                        <option value="Source Verified">Source Verified</option>
+                        <option value="Not Verified">Not Verified</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>ISSUE DATE</td>
+                <td>
+                    <input type="text" name="issue_d" placeholder="MMM-YYYY" required />
+                </td>
+            </tr>
+            <tr>
+                <td>PURPOSE</td>
+                <td>
+                    <input type="text" name="purpose" placeholder="Loan Purpose" required />
+                </td>
+            </tr>
+            <tr>
+                <td>TITLE</td>
+                <td>
+                    <input type="text" name="title" placeholder="Loan Title" required />
+                </td>
+            </tr>
+            <tr>
+                <td>DTI</td>
+                <td>
+                    <input type="number" name="dti" step="0.01" placeholder="Debt-to-Income Ratio" required />
+                </td>
+            </tr>
+            <tr>
+                <td>EARLIEST CREDIT LINE</td>
+                <td>
+                    <input type="text" name="earliest_cr_line" placeholder="MMM-YYYY" required />
+                </td>
+            </tr>
+            <tr>
+                <td>OPEN ACCOUNTS</td>
+                <td>
+                    <input type="number" name="open_acc" placeholder="Number of Open Accounts" required />
+                </td>
+            </tr>
+            <tr>
+                <td>PUBLIC RECORDS</td>
+                <td>
+                    <input type="number" name="pub_rec" placeholder="Number of Public Records" required />
+                </td>
+            </tr>
+            <tr>
+                <td>REVOLVING BALANCE</td>
+                <td>
+                    <input type="number" name="revol_bal" step="0.01" placeholder="Revolving Balance" required />
+                </td>
+            </tr>
+            <tr>
+                <td>REVOLVING UTILIZATION</td>
+                <td>
+                    <input type="number" name="revol_util" step="0.01" placeholder="Revolving Utilization Rate" required />
+                </td>
+            </tr>
+            <tr>
+                <td>TOTAL ACCOUNTS</td>
+                <td>
+                    <input type="number" name="total_acc" placeholder="Total Number of Accounts" required />
+                </td>
+            </tr>
+            <tr>
+                <td>INITIAL LIST STATUS</td>
+                <td>
+                    <select name="initial_list_status" required>
+                        <option value="w">w</option>
+                        <option value="f">f</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>APPLICATION TYPE</td>
+                <td>
+                    <select name="application_type" required>
+                        <option value="INDIVIDUAL">INDIVIDUAL</option>
+                        <option value="JOINT">JOINT</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>MORTGAGE ACCOUNTS</td>
+                <td>
+                    <input type="number" name="mort_acc" placeholder="Number of Mortgage Accounts" required />
+                </td>
+            </tr>
+            <tr>
+                <td>PUBLIC RECORD BANKRUPTCIES</td>
+                <td>
+                    <input type="number" name="pub_rec_bankruptcies" placeholder="Number of Bankruptcies" required />
+                </td>
+            </tr>
+            <tr>
+                <td>ADDRESS</td>
+                <td>
+                    <input type="text" name="address" placeholder="Address" required />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Submit"> 
+                </td>
+            </tr>
+        </table>
+    </form>
+    <h3 align="center"> {{ prediction }} </h3>
+</body>
+</html>
