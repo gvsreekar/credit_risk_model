@@ -1,4 +1,4 @@
-# Credit Default Risk Model
+# Credit Risk Model
 
 ## Project Overview
 With ample financial data available, the Banking Institute aims to understand key determinants in extending credit lines. This analysis assists the Bank in grasping significant loan approval factors and their interplay. The ultimate goal is to devise a model predicting if a credit line should be extended based on individual attributes.  The model is trained on a dataset of borrower attributes, including financial, demographic, and credit-related features. The goal is to enable data-driven decisions in the loan underwriting process.
