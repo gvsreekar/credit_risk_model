@@ -1,17 +1,24 @@
-# Credit Risk Model
+# End-to-End Deployable Credit Risk Model
+
+## [LIVE DEMO](https://creditriskmodel-aprewf5gesj6uqmo5y3ygx.streamlit.app/) -> [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://creditriskmodel-aprewf5gesj6uqmo5y3ygx.streamlit.app/)
 
 ## Project Overview
-With ample financial data available, the Banking Institute aims to understand key determinants in extending credit lines. This analysis assists the Bank in grasping significant loan approval factors and their interplay. The ultimate goal is to devise a model predicting if a credit line should be extended based on individual attributes.  The model is trained on a dataset of borrower attributes, including financial, demographic, and credit-related features. The goal is to enable data-driven decisions in the loan underwriting process.
+This project aims to develop an End-to-End machine learning model to predict loan default risk for a financial services platform.
+With ample financial data available, the Banking Institute aims to understand key determinants in extending credit lines. This analysis assists the Bank in grasping significant loan approval factors and their interplay. The model is trained on a dataset of borrower attributes, including financial, demographic, and credit-related features. The goal is to enable data-driven decisions in the loan underwriting process.
+
+### Tech used
+
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)![Pandas](https://img.shields.io/badge/Pandas-1.x-brightgreen?logo=pandas)![NumPy](https://img.shields.io/badge/NumPy-1.x-orange?logo=numpy)![Matplotlib](https://img.shields.io/badge/Matplotlib-3.x-blueviolet?logo=plotly)![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-0.24%2B-lightgrey?logo=scikit-learn)![MLFlow](https://img.shields.io/badge/MLFlow-1.x-blue?logo=mlflow)![Optuna](https://img.shields.io/badge/Optuna-3.x-red?logo=optuna)![FastAPI](https://img.shields.io/badge/FastAPI-0.85%2B-brightgreen?logo=fastapi)![Streamlit](https://img.shields.io/badge/Streamlit-1.x-orange?logo=streamlit)
 
 ### Project Breakdown
 
 * Predictive modeling using machine learning algorithms.
 * Feature engineering and selection with sklearn pipelines.
 * Hyperparameter tuning using Optuna.
-* MLflow for experiment tracking.
-* UI built using streamlit, Flask.
+* MLflow for experiment tracking and model registry.
+* Frontend with streamlit App
 * API end point created using FASTAPI.
-* Deployed using Docker.
+* Containerization using Docker.
 
 ## Installation/Environment Setup
 
@@ -83,6 +90,36 @@ To make predictions, run the following command in the root directory:
 ```bash
 poetry python credit_risk_model/predict.py
 ```
+### Running Web Apps
+
+#### fastAPI
+
+   ```bash
+   poetry run python fastapi_app.py 
+   ```
+
+   POST to `localhost:8000/predict` with Postman or use `localhost:8000/predict/docs` in browser for documentation / testing
+
+
+## Usage with docker
+
+### 1. Pulling the Docker Image
+
+To pull the Docker image from Docker Hub, run the following command:
+
+```sh
+# Pull the docker image
+docker pull gvsreekar/loantap_api:v2
+```
+
+### 2. Running the Docker Container
+
+To run the Docker container, use the following command:
+
+```sh
+# Run the docker container
+docker run -p 8000:8000 loantap_api:v2 # goto http://localhost:8501 in browser
+```
 
 ## Model
 
@@ -90,7 +127,7 @@ The model used for this project is an XGBoost classifier.
 
 ## Results
 
-The model achieved an f1 score of 65% on the test set.
+The model achieved an f1 score of **66.12%** and recall of **85.84%** on the test dataset.
 
 ## License
 
