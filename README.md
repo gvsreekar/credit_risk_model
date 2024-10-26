@@ -118,7 +118,7 @@ To run the Docker container, use the following command:
 
 ```sh
 # Run the docker container
-docker run -p 8000:8000 loantap_api:v2 # goto http://localhost:8501 in browser
+docker run -p 8000:8000 loantap_api:v2 # goto http://localhost:8000 in browser
 ```
 
 ## Model
