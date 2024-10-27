@@ -88,7 +88,7 @@ poetry run python credit_risk_model/train.py
 To make predictions, run the following command in the root directory:
 
 ```bash
-poetry python credit_risk_model/predict.py
+poetry run python credit_risk_model/predict.py
 ```
 ### Running Web Apps
 
